@@ -31,6 +31,11 @@ lineage_stub_packages := lineageos.alarmclock:lineageos.app:lineageos.content:li
 # ============================================================
 include $(CLEAR_VARS)
 
+ifndef LOCAL_JACK_ENABLED
+LOCAL_PROGUARD_ENABLED := disabled
+LOCAL_DX_FLAGS := --multi-dex
+endif
+
 lineage_sdk_src := sdk/src/java/lineageos
 lineage_sdk_internal_src := sdk/src/java/org/lineageos/internal
 library_src := lineage/lib/main/java
