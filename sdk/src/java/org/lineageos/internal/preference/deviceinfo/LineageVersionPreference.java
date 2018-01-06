@@ -33,7 +33,7 @@ public class LineageVersionPreference extends SelfRemovingPreference
 
     private static final String TAG = "LineageVersionPreference";
 
-    private static final String KEY_LINEAGE_VERSION_PROP = "ro.lineage.version";
+    private static final String KEY_AOKP_VERSION_PROP = "ro.aokp.version";
 
     private static final String PLATLOGO_PACKAGE_NAME = "org.lineageos.lineageparts";
     private static final String PLATLOGO_ACTIVITY_CLASS =
@@ -58,8 +58,8 @@ public class LineageVersionPreference extends SelfRemovingPreference
         super.onAttached();
 
         setOnPreferenceClickListener(this);
-        setTitle(R.string.lineage_version);
-        setSummary(SystemProperties.get(KEY_LINEAGE_VERSION_PROP,
+        setTitle(R.string.aokp_version);
+        setSummary(SystemProperties.get(KEY_AOKP_VERSION_PROP,
                 getContext().getResources().getString(R.string.unknown)));
     }
 
