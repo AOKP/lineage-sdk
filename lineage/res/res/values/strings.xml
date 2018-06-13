@@ -148,6 +148,8 @@
     <string name="build_date">Build date</string>
     <!-- About device screen, AOKP version -->
     <string name="aokp_version">AOKP version</string>
+    <!-- About device screen, vendor security patch -->
+    <string name="lineage_vendor_security_patch">Vendor security patch level</string>
 
     <!-- General purpose use "unknown" string -->
     <string name="unknown">Unknown</string>
