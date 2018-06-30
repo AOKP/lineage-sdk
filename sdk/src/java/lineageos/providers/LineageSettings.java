@@ -44,6 +44,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import lineageos.trust.TrustInterface;
+
 /**
  * LineageSettings contains Lineage specific preferences in System, Secure, and Global.
  */
@@ -3011,12 +3013,28 @@ public final class LineageSettings {
         /**
          * Enable displaying the Trust service's notifications
          * 0 = 0ff, 1 = on
+         * @deprecated Rely on {@link lineageos.providers.TRUST_WARNINGS} instead
          */
+         @Deprecated
         public static final String TRUST_NOTIFICATIONS = "trust_notifications";
 
         /** @hide */
+        @Deprecated
         public static final Validator TRUST_NOTIFICATIONS_VALIDATOR =
                 sBooleanValidator;
+
+        /**
+         * Trust warnings status
+         *
+         * Stores flags for each feature
+         *
+         * @see {@link lineageos.trust.TrustInterface.TRUST_WARN_MAX_VALUE}
+         */
+        public static final String TRUST_WARNINGS = "trust_warnings";
+
+        /** @hide */
+        public static final Validator TRUST_WARNINGS_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, TrustInterface.TRUST_WARN_MAX_VALUE);
 
         // endregion
 
@@ -3124,6 +3142,7 @@ public final class LineageSettings {
             VALIDATORS.put(PROTECTED_COMPONENTS, PROTECTED_COMPONENTS_VALIDATOR);
             VALIDATORS.put(PROTECTED_COMPONENT_MANAGERS, PROTECTED_COMPONENTS_MANAGER_VALIDATOR);
             VALIDATORS.put(TRUST_NOTIFICATIONS, TRUST_NOTIFICATIONS_VALIDATOR);
+            VALIDATORS.put(TRUST_WARNINGS, TRUST_WARNINGS_VALIDATOR);
         }
 
         /**
