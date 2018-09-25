@@ -30,7 +30,7 @@ import org.lineageos.platform.internal.R;
 public class LineageVersionTextView extends TextView implements View.OnClickListener {
     private static final String TAG = "LineageVersionTextView";
 
-    private static final String KEY_LINEAGE_VERSION_PROP = "ro.lineage.version";
+    private static final String KEY_AOKP_VERSION_PROP = "ro.aokp.version";
 
     private static final String PLATLOGO_PACKAGE_NAME = "org.lineageos.lineageparts";
     private static final String PLATLOGO_ACTIVITY_CLASS =
@@ -40,7 +40,7 @@ public class LineageVersionTextView extends TextView implements View.OnClickList
 
     public LineageVersionTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setText(SystemProperties.get(KEY_LINEAGE_VERSION_PROP,
+        setText(SystemProperties.get(KEY_AOKP_VERSION_PROP,
                 getContext().getResources().getString(R.string.unknown)));
         setOnClickListener(this);
     }
